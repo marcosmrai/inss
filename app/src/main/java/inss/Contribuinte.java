@@ -61,6 +61,7 @@ public abstract class Contribuinte {
      * Calcula o tempo total de contribuição em meses.
      *
      * @return O número total de meses de contribuição.
+     * 
      */
     public int calcularTempoContribuicaoTotal() {
         return contribuicoes.size();

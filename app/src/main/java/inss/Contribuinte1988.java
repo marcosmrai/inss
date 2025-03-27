@@ -19,14 +19,24 @@ public class Contribuinte1988 extends Contribuinte {
     }
 
     /**
+     * Construtor da classe Contribuinte.
+     *
+     * @param genero O gênero do contribuinte, deve ser "Homem" ou "Mulher".
+     * @throws IllegalArgumentException Se o gênero não for "Homem" ou "Mulher".
+     */
+    public Contribuinte1988(String genero) {
+        super(null, genero);
+    }
+
+    /**
      * Calcula o tempo restante até a aposentadoria com base na idade e gênero do contribuinte.
      *
      * @return O número de anos restantes até a aposentadoria.
      */
     @Override
     public int calcularTempoRestanteAposentadoria() {
-        int idadeAposentadoria = getGenero().equals("Homem") ? 50 : 45;
-        return Math.max(0, idadeAposentadoria - getIdade());
+        int tempoContribuicao = getGenero().equals("Homem") ? 35 : 30;
+        return Math.max(0, tempoContribuicao - calcularAnosContribuicao());
     }
 
     /**
